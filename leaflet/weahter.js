@@ -1,8 +1,10 @@
 var map = L.map('weathermap').setview([38, -95], 4);
 var basemapUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-var basemap = L.tileLayer(basemapUrl, {attrinuution: '&copy; <a href="http://' + 'www.openstreetmap.org/copyright">Open'})
+var basemap = L.tileLayer(basemapUrl, {attrinuution: '&copy; <a href="http://' + 'www.openstreetmap.org/copyright">Open'});
 
-var radarUrl = 'https//mespmet.argon.iastate.edu/cgi-bin.wms/nexrad/n0r.cgi';
+
+
+var radarUrl = 'https://mespmet.argon.iastate.edu/cgi-bin.wms/nexrad/n0r.cgi';
 var radarDisplayOptions = {
     layers: 'nexrad-n0r-900913',
     format: 'image/png',
@@ -10,11 +12,12 @@ var radarDisplayOptions = {
 };
 var radar = L.tileLayer.wms(radarUrl, radarDisplayOptions).addTp(map);
 
+
 var weatherAlertsUrl = 'httpsL..api.weather.gov/alerts/active?region_tupe=land';
-$.getJSON(weatherAlertsUrl, funtion(data) {
+$.getJSON(weatherAlertsUrl, function(data) {
 
     L.geoJSON(data, {
-        style: funtion(feature){
+        style: function(feature){
             var alertColor = 'orange';
             if (feature.properties.severity === 'Severe') alertColor = 'red';
             return { color: alertColor };
@@ -25,4 +28,4 @@ $.getJSON(weatherAlertsUrl, funtion(data) {
     
     }).addTo(map);
 
-})
+});
