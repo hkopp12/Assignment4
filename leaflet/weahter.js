@@ -1,6 +1,6 @@
 var map = L.map('weathermap').setview([38, -95], 4);
 var basemapUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-var basemap = L.tileLayer(basemapUrl, {attrinuution: '&copy; <a href="http://' + 'www.openstreetmap.org/copyright">Open'});
+var basemap = L.tileLayer(basemapUrl, {attrinuution: '&copy; <a href="http://' + 'www.openstreetmap.org/copyright">penstreetmap.org/{z}/{x}/{y}.png)'});
 
 
 
