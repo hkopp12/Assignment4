@@ -4,7 +4,7 @@ var basemap = L.tileLayer(basemapUrl, {attribution: '&copy; <a href="http:/' + '
 
 
 
-var radarUrl = 'https://mespmet.argon.iastate.edu/cgi-bin.wms/nexrad/n0r.cgi';
+var radarUrl = 'https://mesonet.argon.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi';
 var radarDisplayOptions = {
     layers: 'nexrad-n0r-900913',
     format: 'image/png',
