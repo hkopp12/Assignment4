@@ -13,7 +13,7 @@ var radarDisplayOptions = {
 var radar = L.tileLayer.wms(radarUrl, radarDisplayOptions).addTp(map);
 
 
-var weatherAlertsUrl = 'https://api.weather.gov/alerts/active?region_tupe=land';
+var weatherAlertsUrl = 'https://api.weather.gov/alerts/active?region_type=land';
 $.getJSON(weatherAlertsUrl, function(data) {
 
     L.geoJSON(data, {
